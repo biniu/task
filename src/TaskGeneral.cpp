@@ -3,7 +3,7 @@
 #include "TaskGeneral.hpp"
 
 TaskGeneral::TaskGeneral(const std::string &task_name)
-  : TaskGeneral(task_name, "") {}
+    : TaskGeneral(task_name, "") {}
 
 TaskGeneral::TaskGeneral(const std::string &task_name,
                          const std::string &task_description)
@@ -13,18 +13,12 @@ TaskGeneral::TaskGeneral(const std::string &task_name,
 
 TaskGeneral::~TaskGeneral() {}
 
-void TaskGeneral::SetName(const std::string &task_name) {
-  name = task_name;
-}
+void TaskGeneral::SetName(const std::string &task_name) { name = task_name; }
 
 void TaskGeneral::SetDescription(const std::string &task_description) {
   description = task_description;
 }
 
-std::string TaskGeneral::GetName() {
-  return name;
-}
+std::string TaskGeneral::GetName() { return name; }
 
-std::string TaskGeneral::GetDescription() {
-  return description;
-}
+std::string TaskGeneral::GetDescription() { return description; }

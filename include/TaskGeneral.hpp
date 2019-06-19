@@ -10,7 +10,8 @@ class TaskGeneral {
 public:
   TaskGeneral() = delete;
   explicit TaskGeneral(const std::string &task_name);
-  TaskGeneral(const std::string &task_name, const std::string &task_description);
+  TaskGeneral(const std::string &task_name,
+              const std::string &task_description);
 
   virtual ~TaskGeneral();
 
@@ -27,4 +28,4 @@ private:
   std::chrono::time_point<std::chrono::system_clock> creation_time;
 };
 
-#endif //TASKGENERAL
+#endif // TASKGENERAL
