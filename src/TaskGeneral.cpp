@@ -2,12 +2,15 @@
 
 #include "TaskGeneral.hpp"
 
-TaskGeneral::TaskGeneral(const std::string &task_name)
-    : TaskGeneral(task_name, "") {}
+TaskGeneral::TaskGeneral(const ProjectGeneral &project_ref,
+                         const std::string &task_name)
+    : TaskGeneral(project_ref, task_name, "") {}
 
-TaskGeneral::TaskGeneral(const std::string &task_name,
+TaskGeneral::TaskGeneral(const ProjectGeneral &project_ref,
+                         const std::string &task_name,
                          const std::string &task_description)
     : name(task_name), description(task_description) {
+  project = std::make_unique<ProjectGeneral>(project_ref);
   creation_time = std::chrono::system_clock::now();
 }
 
