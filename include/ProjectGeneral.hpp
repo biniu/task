@@ -4,6 +4,7 @@
 #define PROJECTGENERAL
 
 #include <chrono>
+#include <iostream>
 #include <string>
 #include <vector>
 
@@ -27,6 +28,8 @@ public:
   std::string GetDescription() const;
 
   void AddTask(const TaskGeneral &task);
+
+  friend std::ostream &operator<<(std::ostream &os, const ProjectGeneral &pg);
 
 private:
   std::string name{""};

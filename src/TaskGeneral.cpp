@@ -20,3 +20,8 @@ void TaskGeneral::SetDescription(const std::string &task_description) {
 std::string TaskGeneral::GetName() { return name; }
 
 std::string TaskGeneral::GetDescription() { return description; }
+
+std::ostream &operator<<(std::ostream &os, const TaskGeneral &tg) {
+  os << "Task: " << tg.name << std::endl;
+  return os;
+}
