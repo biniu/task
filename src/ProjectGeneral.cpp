@@ -20,10 +20,19 @@ void ProjectGeneral::SetDescription(const std::string &project_description) {
   description = project_description;
 }
 
-std::string ProjectGeneral::GetName() {
-  return name;
+std::string ProjectGeneral::GetName() const { return name; }
+
+std::string ProjectGeneral::GetDescription() const { return description; }
+
+void ProjectGeneral::AddTask(const TaskGeneral &task) {
+  task_vector.push_back(task);
 }
 
-std::string ProjectGeneral::GetDescription() {
-  return description;
+std::ostream &operator<<(std::ostream &os, const ProjectGeneral &pg){
+  os << "Project: " << pg.name << std::endl;
+  os << "Task list:" << std::endl;
+  for (auto t : pg.task_vector)
+    os << "\t" << t;
+
+  return os;
 }
