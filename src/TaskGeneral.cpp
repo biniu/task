@@ -11,8 +11,6 @@ TaskGeneral::TaskGeneral(const std::string &task_name,
   creation_time = std::chrono::system_clock::now();
 }
 
-TaskGeneral::~TaskGeneral() {}
-
 void TaskGeneral::SetName(const std::string &task_name) { name = task_name; }
 
 void TaskGeneral::SetDescription(const std::string &task_description) {

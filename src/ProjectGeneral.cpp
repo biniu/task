@@ -20,6 +20,10 @@ void ProjectGeneral::SetDescription(const std::string &project_description) {
   description = project_description;
 }
 
-std::string ProjectGeneral::GetName() { return name; }
+std::string ProjectGeneral::GetName() const { return name; }
 
-std::string ProjectGeneral::GetDescription() { return description; }
+std::string ProjectGeneral::GetDescription() const { return description; }
+
+void ProjectGeneral::AddTask(const TaskGeneral &task) {
+  task_vector.push_back(task);
+}
