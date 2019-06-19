@@ -20,10 +20,6 @@ void ProjectGeneral::SetDescription(const std::string &project_description) {
   description = project_description;
 }
 
-std::string ProjectGeneral::GetName() {
-  return name;
-}
+std::string ProjectGeneral::GetName() { return name; }
 
-std::string ProjectGeneral::GetDescription() {
-  return description;
-}
+std::string ProjectGeneral::GetDescription() { return description; }

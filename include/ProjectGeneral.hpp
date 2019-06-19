@@ -1,4 +1,4 @@
-
+//
 
 #ifndef PROJECTGENERAL
 #define PROJECTGENERAL
@@ -10,7 +10,8 @@ class ProjectGeneral {
 public:
   ProjectGeneral() = delete;
   explicit ProjectGeneral(const std::string &project_name);
-  ProjectGeneral(const std::string &project_name, const std::string &project_description);
+  ProjectGeneral(const std::string &project_name,
+                 const std::string &project_description);
 
   ProjectGeneral(const ProjectGeneral &src) = default;
 
@@ -29,4 +30,4 @@ private:
   std::chrono::time_point<std::chrono::system_clock> creation_time;
 };
 
-#endif //PROJECTGENERAL
+#endif // PROJECTGENERAL
