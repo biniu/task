@@ -1,7 +1,7 @@
 
 
-#ifndef _PROJECTGENERAL
-#define _PROJECTGENERAL
+#ifndef PROJECTGENERAL
+#define PROJECTGENERAL
 
 #include <chrono>
 #include <string>
@@ -9,19 +9,18 @@
 class ProjectGeneral {
 public:
   ProjectGeneral() = delete;
-  ProjectGeneral(const std::string &name);
-  ProjectGeneral(const std::string &name, const std::string &description);
+  ProjectGeneral(const std::string &project_name);
+  ProjectGeneral(const std::string &project_name, const std::string &project_description);
 
   ProjectGeneral(const ProjectGeneral &src) = default;
 
-  virtual ~ProjectGeneral() = default;
+  virtual ~ProjectGeneral();
 
 private:
   std::string name;
   std::string description;
-  unsigned int id;
 
   std::chrono::time_point<std::chrono::system_clock> creation_time;
 };
 
-#endif //_PROJECTGENERAL
+#endif //PROJECTGENERAL
