@@ -17,8 +17,8 @@ public:
   void SetName(const std::string &task_name);
   void SetDescription(const std::string &task_description);
 
-  std::string GetName();
-  std::string GetDescription();
+  std::string GetName() const;
+  std::string GetDescription() const;
 
   friend std::ostream &operator<<(std::ostream &os, const TaskGeneral &tg);
 
