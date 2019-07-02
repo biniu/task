@@ -16,6 +16,7 @@ file(GLOB TEST_SOURCES "tests/*.cpp")
 file(GLOB ALL_SOURCES "src/*.cpp" "tests/*.cpp" "include/*.hpp")
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/cppcheck.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/clang-format.cmake)
 
 add_executable(task ${SOURCES})
 
