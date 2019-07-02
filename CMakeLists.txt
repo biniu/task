@@ -13,6 +13,10 @@ include_directories(include)
 file(GLOB SOURCES "src/*.cpp")
 file(GLOB TEST_SOURCES "tests/*.cpp")
 
+file(GLOB ALL_SOURCES "src/*.cpp" "tests/*.cpp" "include/*.hpp")
+
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/cppcheck.cmake)
+
 add_executable(task ${SOURCES})
 
 # TODO(biniu) - change to find package
