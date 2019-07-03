@@ -17,8 +17,11 @@ file(GLOB ALL_SOURCES "src/*.cpp" "tests/*.cpp" "include/*.hpp")
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/cppcheck.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/clang-format.cmake)
+# include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/clang-tidy.cmake)
 
 add_executable(task ${SOURCES})
+
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/clang-tidy.cmake)
 
 # TODO(biniu) - change to find package
 #             - and download if not installed
