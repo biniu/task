@@ -17,7 +17,9 @@ file(GLOB ALL_SOURCES "src/*.cpp" "tests/*.cpp" "include/*.hpp")
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/cppcheck.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/clang-format.cmake)
-# include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/clang-tidy.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/clang-sanitizers.cmake)
+
+
 
 add_executable(task ${SOURCES})
 
