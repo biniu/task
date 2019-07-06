@@ -11,9 +11,12 @@ SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wc++2a-extensions")
 include_directories(include)
 
 file(GLOB SOURCES "src/*.cpp")
+file(GLOB HEADERS "include/*.hpp")
 file(GLOB TEST_SOURCES "tests/*.cpp")
 
 file(GLOB ALL_SOURCES "src/*.cpp" "tests/*.cpp" "include/*.hpp")
+
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmakes")
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/cppcheck.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/clang-format.cmake)
@@ -23,6 +26,8 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/clang-sanitizers.cmake)
 
 add_executable(task ${SOURCES})
 
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/FindSphinx.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/doxygen.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmakes/clang-tidy.cmake)
 
 # TODO(biniu) - change to find package

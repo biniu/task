@@ -1,0 +1,8 @@
+
+…
+
+Docs
+====
+
+.. doxygenstruct:: cat
+   :members:
