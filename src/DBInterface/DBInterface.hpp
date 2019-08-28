@@ -17,11 +17,10 @@ public:
   DBConnection(DBConnection const &) = delete;
   void operator=(DBConnection const &) = delete;
 
-  // friend bool operator==(const DBConnection& a, const DBConnection& b);
-  // friend bool operator!=(const DBConnection& a, const DBConnection& b);
-
   bool operator==(const DBConnection& a) const;
   bool operator!=(const DBConnection& a) const;
+
+  void* RunQuery(const std::string &query) const;
 private:
   DBConnection();
 
