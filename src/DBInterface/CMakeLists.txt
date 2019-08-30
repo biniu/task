@@ -1,5 +1,7 @@
 
 set(DBINTERFACE_SRCS
+    DBConnection.hpp
+
     DBInterface.hpp
     DBInterface.cpp
 )

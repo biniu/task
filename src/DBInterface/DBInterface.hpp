@@ -1,48 +1,19 @@
 #ifndef DBINTERFACE
 #define DBINTERFACE
 
-#include <memory>
-#include <sqlite3.h>
 #include <string>
 
-// #include "ProjectGeneral.hpp"
-// #include "TaskGeneral.hpp"
-
-class DBConnection {
+class DBInterface {
 public:
+  DBInterface(const std::string &project);
+  ~DBInterface();
 
-  static DBConnection& GetConnection();
-  virtual ~DBConnection();
+  // virtual void AddTask();
+  // virtual GetTasks();
 
-  DBConnection(DBConnection const &) = delete;
-  void operator=(DBConnection const &) = delete;
-
-  bool operator==(const DBConnection& a) const;
-  bool operator!=(const DBConnection& a) const;
-
-  void* RunQuery(const std::string &query) const;
 private:
-  DBConnection();
-
-  // TODO(biniu) : find more elastic solutions
-  const std::string dbName = "test.db";
-  static sqlite3 *db_ptr;
+  // void SetDBName(const std::string &project);
 };
 
-// sqlite3 *DBConnection::db_ptr = nullptr;
-
-// class DBInterface {
-// public:
-//   DBInterface(const ProjectGeneral &project);
-//   ~DBInterface();
-
-//   // void SaveTask(const TaskGeneral &task);
-
-// private:
-//   void SetDBName(const ProjectGeneral &project);
-
-//   // sqlite3 *db_ptr{nullptr};
-//   std::string db_name;
-// };
-
 #endif // DBINTERFACE
+l
