@@ -2,6 +2,7 @@
 
 #include "TaskGeneral.hpp"
 
+
 TaskGeneral::TaskGeneral(const std::string &task_name)
     : TaskGeneral(task_name, "") {}
 

@@ -11,12 +11,11 @@ add_library(DBInterface_lib STATIC
     ${DBINTERFACE_SRCS}
 )
 
-target_link_options(DBInterface_lib PUBLIC -lsqlite3)
-
 # Link dependency
-# target_link_libraries(DBINTERFACE
-#     SAMPLE_LIB_2
-# )
+target_link_libraries(DBInterface_lib
+  tasks_lib
+  projects_lib
+)
 
 # Specify here the include directories exported by this library
 target_include_directories(DBInterface_lib PUBLIC
