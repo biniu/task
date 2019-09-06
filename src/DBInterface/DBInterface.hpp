@@ -8,6 +8,7 @@
 #include <boost/archive/text_iarchive.hpp>
 
 #include "TaskGeneral.hpp"
+#include "ProjectGeneral.hpp"
 
 class DBInterface {
 public:
@@ -15,8 +16,8 @@ public:
   DBInterface(const std::string &project);
   ~DBInterface() = default;
 
-  void AddTask(const TaskGeneral& task);
-  void GetTasks() const;
+  void SaveProject(const ProjectGeneral &project);
+  void LoadProject() const;
 
 private:
   std::fstream ofs;

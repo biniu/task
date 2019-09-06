@@ -24,7 +24,7 @@ std::string ProjectGeneral::GetName() const { return name; }
 
 std::string ProjectGeneral::GetDescription() const { return description; }
 
-void ProjectGeneral::AddTask(const TaskGeneral &task) {
+void ProjectGeneral::AddTask(TaskGeneral *task) {
   task_vector.push_back(task);
 }
 

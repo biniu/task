@@ -7,12 +7,12 @@ DBInterface::DBInterface(const std::string &project) {
   // oa = boost::archive::text_oarchive(ofs);
 }
 
-void DBInterface::AddTask(const TaskGeneral &task) {
+void DBInterface::SaveProject(const ProjectGeneral &project) {
   boost::archive::text_oarchive oa(ofs);
-  oa << task;
+  oa << project;
 }
 
-void DBInterface::GetTasks() const {
+void DBInterface::LoadProject() const {
 
   std::ifstream ifs(file_name);
   boost::archive::text_iarchive ia(ifs);

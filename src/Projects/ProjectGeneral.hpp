@@ -27,7 +27,7 @@ public:
   std::string GetName() const;
   std::string GetDescription() const;
 
-  void AddTask(const TaskGeneral &task);
+  void AddTask(TaskGeneral *task);
 
   friend std::ostream &operator<<(std::ostream &os, const ProjectGeneral &pg);
 
@@ -37,7 +37,22 @@ private:
 
   std::chrono::time_point<std::chrono::system_clock> creation_time;
 
-  std::vector<TaskGeneral> task_vector;
+  std::vector<TaskGeneral*> task_vector;
+
+  friend class boost::serialization::access;
+
+  template <class Archive>
+  void serialize(Archive &ar, const unsigned int version) {
+    ar &name;
+    ar &description;
+
+    for(auto &task : task_vector)
+      ar &task;
+
+    // for_each(task_vector.begin(), task_vector.end(), ar &task_vector );
+    // ar &task_vector;
+    // ar &creation_time;
+  }
 };
 
 #endif // PROJECTGENERAL
