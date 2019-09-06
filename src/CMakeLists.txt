@@ -4,7 +4,8 @@
 set(Boost_INCLUDE_DIR /usr/include/)
 set(Boost_LIBRARY_DIR /usr/lib)
 
-find_package(Boost COMPONENTS system serialization REQUIRED)
+SET(Boost_USE_STATIC_LIBS ON)
+find_package(Boost COMPONENTS system serialization log REQUIRED)
 
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIR})

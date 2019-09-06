@@ -2,6 +2,7 @@
 
 #include "TaskGeneral.hpp"
 
+#include <boost/log/trivial.hpp>
 
 TaskGeneral::TaskGeneral(const std::string &task_name)
     : TaskGeneral(task_name, "") {}
@@ -10,6 +11,7 @@ TaskGeneral::TaskGeneral(const std::string &task_name,
                          const std::string &task_description)
     : name(task_name), description(task_description) {
   creation_time = std::chrono::system_clock::now();
+  BOOST_LOG_TRIVIAL(info) << "[TASK][" << name << "] -> created" ;
 }
 
 void TaskGeneral::SetName(const std::string &task_name) { name = task_name; }
